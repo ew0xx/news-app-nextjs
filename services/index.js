@@ -1,6 +1,6 @@
 import { request, gql } from "graphql-request";
 
-const graphqlAPI = process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:1337/graphql"
+const graphqlAPI = process.env.NEXT_PUBLIC_API_ENDPOINT || "http://89.116.228.21:1337/graphql"
 export const getCategories = async () => {
   const query = gql`
     query GetCategories {
