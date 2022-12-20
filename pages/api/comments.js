@@ -2,7 +2,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 import { useEffect, useState } from 'react';
 import { getPostId } from '../../services';
 import NextCors from 'nextjs-cors';
-const graphqlAPI = process.env.NEXT_PUBLIC_ENDPOINT || "http://localhost:1337";
+const graphqlAPI = process.env.NEXT_PUBLIC_ENDPOINT || "http://89.116.228.21:1337";
 const token = process.env.NEXT_API_TOKEN
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
@@ -31,7 +31,7 @@ export default async function asynchandler(req, res) {
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
  });
   console.log({token})
-  const graphQLClient = new GraphQLClient(("http://localhost:1337"), {
+  const graphQLClient = new GraphQLClient(("http://89.116.228.21:1337"), {
     headers: {
       authorization: `Bearer ${token}`,
     },
