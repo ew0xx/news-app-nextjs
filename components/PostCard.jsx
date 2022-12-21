@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 import moment from "moment";
 import Link from "next/link";
+import { grpahCMSImageLoader } from "../util";
 
-// import { grpahCMSImageLoader } from '../util';
+
 
 const PostCard = ({ post }) => (
   <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
@@ -18,9 +19,13 @@ const PostCard = ({ post }) => (
       />
     </div> */}
     <div className="relative overflow-hidden shadow-md pb-80 mb-6">
-      <img
+      <Image
+      unoptimized
+      loader={grpahCMSImageLoader}
         src={process.env.NEXT_PUBLIC_ENDPOINT + post.featuredImage.data.attributes.url}
-        alt=""
+        alt={post.author.data.attributes.name}
+        height={80}
+        width={60}
         className="object-top absolute h-80 w-full shadow-lg rounded-t-lg lg:rounded-lg"
       />
     </div>
@@ -30,10 +35,12 @@ const PostCard = ({ post }) => (
     </h1>
     <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
       <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-        <img
+        <Image
+        unoptimized
+        loader={grpahCMSImageLoader}
           alt={post.author.data.attributes.name}
-          height="30px"
-          width="30px"
+          height={30}
+          width={30}
           className="align-middle rounded-full"
           src={
             process.env.NEXT_PUBLIC_ENDPOINT +
