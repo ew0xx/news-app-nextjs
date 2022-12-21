@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-
+import Image from "next/image";
 import Link from "next/link";
 import { getCategories } from "../services";
+import { grpahCMSImageLoader } from "../util";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -18,7 +19,8 @@ const Header = () => {
         <div className="md:float-left block">
           <Link href="/">
             <span className="cursor-pointer font-bold text-4xl text-white">
-              <img src={process.env.NEXT_PUBLIC_ENDPOINT+"/uploads/parasal_533c3c70a5.png?updated_at=2022-12-19T13:39:10.680Z"} className="object-fit h-24 w-64" />
+              <Image unoptimized loader={grpahCMSImageLoader}src={process.env.NEXT_PUBLIC_ENDPOINT+"/uploads/parasal_be1943870c.png?updated_at=2022-12-21T11:19:11.956Z"} height={24}
+              width={64}className="object-fit h-24 w-64" />
             </span>
           </Link>
         </div>
