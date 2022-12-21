@@ -10,7 +10,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> */}
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+           <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> 
         </Head>
         <body>
           <Main />
