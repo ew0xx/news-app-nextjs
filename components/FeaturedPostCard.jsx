@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
+import { grpahCMSImageLoader } from '../util';
 
 const FeaturedPostCard = ({ post }) => (
   <div className="relative h-72">
@@ -13,6 +14,7 @@ const FeaturedPostCard = ({ post }) => (
       <div className="flex items-center absolute bottom-5 w-full justify-center">
         <Image
           unoptimized
+          loader={grpahCMSImageLoader}
           alt={post.author.data.attributes.name}
           height={30}
           width={30}
